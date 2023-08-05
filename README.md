@@ -26,7 +26,7 @@
 
       git clone ...
 
-- Download the file **execute_pipeline.py** from this repository.
+- Download the files **execute_pipeline.py**, **credentials.py**, **variables.py** and **prompts.py** from this repository.
 - Go to **credentials.py** and update it with the access keys credentials you created.
 - Go to **variables.py** and update it with the name of your S3 bucket and the URL of your SQS queue.
 - Execute the file
