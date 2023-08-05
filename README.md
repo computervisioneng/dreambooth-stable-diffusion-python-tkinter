@@ -17,10 +17,11 @@
 - Create an IAM user and attach the policy **s3_sqs_access.json** from this repository.
 - Create access keys for the user.
 
-### setup Runpod
+### setup RunPod
 
-- Go to [Runpod](https://runpod.io?ref=560tnscq).
+- Go to [RunPod](https://runpod.io?ref=560tnscq).
 - Go to **secure cloud** and launch an RTX A6000 pod.
+- Select template **RunPod Stable Diffusion**.
 - SSH into your pod.
 - Execute these commands:
 
