@@ -14,8 +14,8 @@
 - Go to S3 and create an S3 bucket.
 - Go to SQS and create a FIFO queue.
 - Go to your queue settings and select the option 'Content-based deduplication'.
-- Create an IAM role and attach the policy **s3_sqs_access.json** from this repository.
-- Create access keys for the access role.
+- Create an IAM user and attach the policy **s3_sqs_access.json** from this repository.
+- Create access keys for the user.
 
 ### setup Runpod
 
