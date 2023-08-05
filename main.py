@@ -10,7 +10,8 @@ from PIL import ImageTk, Image
 import boto3
 
 import credentials
-from variables import *from prompts import DEFAULT_PROMPTS
+from variables import *
+from prompts import DEFAULT_PROMPTS
 from util import _from_rgb, generate_random_string, get_custom_prompts, write_custom_prompts
 
 
