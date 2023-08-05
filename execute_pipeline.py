@@ -89,7 +89,7 @@ while True:
 
             training_images_key = message['training_images']
             out_model_key = message['model_url']
-            number_steps_per_image = message['steps_per_image']
+            number_steps_per_image = int(message['steps_per_image'])
 
             training_images_zip_filename = './{}.zip'.format(project_name)
 
