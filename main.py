@@ -9,9 +9,8 @@ from tkinter.filedialog import asksaveasfile, askopenfilename
 from PIL import ImageTk, Image
 import boto3
 
-from credentials import AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY
-from variables import *
-from prompts import DEFAULT_PROMPTS
+import credentials
+from variables import *from prompts import DEFAULT_PROMPTS
 from util import _from_rgb, generate_random_string, get_custom_prompts, write_custom_prompts
 
 
@@ -37,8 +36,8 @@ class App:
                            aws_secret_access_key=credentials.AWS_SECRET_ACCESS_KEY)
 
         self.s3_client = boto3.client('s3',
-                                      aws_access_key_id=AWS_ACCESS_KEY,
-                                      aws_secret_access_key=AWS_SECRET_ACCESS_KEY)
+                                      aws_access_key_id=credentials.AWS_ACCESS_KEY,
+                                      aws_secret_access_key=credentials.AWS_SECRET_ACCESS_KEY)
 
         self.get_filenames(S3_BUCKET_MODELS_PREFIX)
         self.download(S3_BUCKET_IMGS_PREFIX)
