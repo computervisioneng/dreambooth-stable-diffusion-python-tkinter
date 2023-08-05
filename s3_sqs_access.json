@@ -5,15 +5,15 @@
             "Effect": "Allow",
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::dreambooth-stable-diffusion-tutorial",
-                "arn:aws:s3:::dreambooth-stable-diffusion-tutorial/*"
+                "arn:aws:s3:::S3-BUCKET",
+                "arn:aws:s3:::S3-BUCKET/*"
             ]
         },
         {
             "Effect": "Allow",
             "Action": "sqs:*",
             "Resource": [
-                "arn:aws:sqs:us-east-1:996209742703:ImageGenerationSQS.fifo"
+                "SQS-ARN"
             ]
         }
     ]
