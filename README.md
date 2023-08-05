@@ -25,7 +25,21 @@
 - SSH into your pod.
 - Execute these commands:
 
-      git clone ...
+      git clone https://github.com/JoePenna/Dreambooth-Stable-Diffusion
+      wget https://huggingface.co/panopstor/EveryDream/resolve/main/sd_v1-5_vae.ckpt
+      apt install zip -y
+      mkdir Dreambooth-Stable-Diffusion/training_images
+      mv sd_v1-5_vae.ckpt Dreambooth-Stable-Diffusion/model.ckpt
+      git clone https://github.com/djbielejeski/Stable-Diffusion-Regularization-Images-person_ddim.git
+      mkdir -p Dreambooth-Stable-Diffusion/regularization_images/person_ddim
+      mv -v Stable-Diffusion-Regularization-Images-person_ddim/person_ddim/*.* Dreambooth-Stable-Diffusion/regularization_images/person_ddim/
+      cd Dreambooth-Stable-Diffusion
+      pip install -e .
+      pip install boto3
+      pip install pytorch-lightning==1.7.6
+      pip install torchmetrics==0.11.1
+      pip install -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers
+      pip install captionizer
 
 - Download the files **execute_pipeline.py**, **credentials.py**, **variables.py** and **prompts.py** from this repository.
 - Go to **credentials.py** and update it with the access keys credentials you created.
@@ -40,6 +54,7 @@
 - Install requirements.
 - Go to **credentials.py** and update it with the access keys credentials you created.
 - Go to **variables.py** and update it with the name of your S3 bucket and the URL of your SQS queue.
+- Execute **main.py**.
 - Have fun !
 
 ## next steps
