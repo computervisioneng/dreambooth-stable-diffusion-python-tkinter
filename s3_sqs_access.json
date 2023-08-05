@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::dreambooth-stable-diffusion-tutorial",
+                "arn:aws:s3:::dreambooth-stable-diffusion-tutorial/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "sqs:*",
+            "Resource": [
+                "arn:aws:sqs:us-east-1:996209742703:ImageGenerationSQS.fifo"
+            ]
+        }
+    ]
+}
