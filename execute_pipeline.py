@@ -4,6 +4,7 @@ import ast
 import random
 import string
 import os
+import json
 
 import boto3
 
@@ -119,7 +120,7 @@ while True:
 
             # 0 Saves the checkpoint when max_training_steps is reached.
             # 250 saves the checkpoint every 250 steps as well as when max_training_steps is reached.
-            save_every_x_steps = 1000
+            save_every_x_steps = 0
 
             reg_data_root = "regularization_images/person_ddim"
 
@@ -132,15 +133,15 @@ while True:
 
             out_model_path = [j for j in os.listdir('./trained_models') if project_name in j and j.endswith('.ckpt')][0]
             shutil.move(os.path.join('./trained_models', out_model_path), os.path.join('./trained_models',
-                                                                                       out_model_key))
+                                                                                       out_model_key.split('/')[-1]))
 
-            response = s3_client.upload_file(os.path.join('./trained_models', out_model_key),
+            response = s3_client.upload_file(os.path.join('./trained_models', out_model_key.split('/')[-1]),
                                              bucket_name,
                                              out_model_key)
 
             for prompt_name in prompts.DEFAULT_PROMPTS.keys():
                 prompt = prompts.DEFAULT_PROMPTS[prompt_name]
-                response = self.sqs.send_message(
+                response = sqs.send_message(
                                     QueueUrl=variables.SQS_QUEUE_URL,
                                     MessageBody=json.dumps({'mode': 'inference',
                                                            'prompt': prompt,
