@@ -1,0 +1,6 @@
+S3_BUCKET_NAME = None
+S3_BUCKET_MODELS_PREFIX = 'out/models'
+S3_BUCKET_IMGS_PREFIX = 'out/imgs'
+S3_BUCKET_TRAINING_DATA_PREFIX = 'training_data'
+
+SQS_QUEUE_URL = None
