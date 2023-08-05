@@ -112,6 +112,8 @@ class App:
                                            bg=_from_rgb((100, 100, 100)), fg='white')
         self.select_model_label.place(x=30, y=50)
 
+        if not os.path.exists(S3_BUCKET_MODELS_PREFIX):
+            os.makedirs(S3_BUCKET_MODELS_PREFIX, exist_ok=True)
         models = [j for j in os.listdir(S3_BUCKET_MODELS_PREFIX)]
         models = ['                                         '] + models
         self.selected_model_ = tk.StringVar()
