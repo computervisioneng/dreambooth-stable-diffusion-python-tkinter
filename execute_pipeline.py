@@ -65,7 +65,7 @@ while True:
 
             prompt = prompt.replace('@me', 'http person')
 
-            model_path = './trained_models/' + model_path
+            model_path = './trained_models/' + model_path.split('/')[-1]
 
             output_dir = generate_random_string()
 
