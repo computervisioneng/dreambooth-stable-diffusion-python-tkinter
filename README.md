@@ -1,7 +1,7 @@
 # dreambooth-stable-diffusion-python-tkinter
 
 <p align="center">
-<a href="https://www.youtube.com/watch?v=">
+<a href="https://www.youtube.com/watch?v=_yjNLzUwFhA">
     <img width="100%" src="https://utils-computervisiondeveloper.s3.amazonaws.com/thumbnails/train_dreambooth_python.jpg" alt="Watch the video">
 </a>
 </p>
