@@ -20,5 +20,5 @@ def get_custom_prompts():
 
 def write_custom_prompts(dict_):
     with open('./custom_prompts.json', 'w') as f:
-        json.dumps(f, dict_)
+        json.dump(dict_, f)
         f.close()

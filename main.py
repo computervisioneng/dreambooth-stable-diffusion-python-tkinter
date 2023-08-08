@@ -385,7 +385,7 @@ class App:
             self.move_left_button.place(x=0, y=780)
             self.move_right_button.place(x=700, y=780)
 
-        elif self.selected_style not in ['CUSTOM PROMPT']:
+        elif self.selected_style not in ['CUSTOM PROMPT'] and self.selected_style not in get_custom_prompts():
             response = self.generate_image_dreambooth(self.selected_style, DEFAULT_PROMPTS[self.selected_style])
             print(response)
 
@@ -394,12 +394,22 @@ class App:
             else:
                 tk.messagebox.showinfo("ERROR", "Please try again.")
 
-        else:
-            name = 'custom-prompt-{}'.format(generate_random_string(5))
+        elif self.selected_style in ['CUSTOM PROMPT']:
+            name = 'custom-prompt-{}'.format(generate_random_string(5).lower())
             custom_prompts_ = get_custom_prompts()
             custom_prompts_[name] = self.custom_prompt_text_box.get("1.0", 'end-1c')
             write_custom_prompts(custom_prompts_)
             id = self.generate_image_dreambooth(name, self.custom_prompt_text_box.get("1.0", 'end-1c'))
+            print(id)
+
+            if True:  # TODO: change response status
+                tk.messagebox.showinfo("Thank you!", "Image generation has started!\nPlease come back later.")
+            else:
+                tk.messagebox.showinfo("ERROR", "Please try again.")
+
+        else:
+            custom_prompts_ = get_custom_prompts()
+            id = self.generate_image_dreambooth(self.selected_style, [custom_prompts_[self.selected_style]])
             print(id)
 
             if True:  # TODO: change response status
