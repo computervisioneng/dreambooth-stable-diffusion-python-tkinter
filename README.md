@@ -19,7 +19,7 @@
 
 ### setup RunPod
 
-- Go to [RunPod](https://runpod.io?ref=560tnscq).
+- Go to [RunPod](https://bit.ly/451svCO).
 - Go to **secure cloud** and launch an RTX A6000 pod.
 - Select template **RunPod Stable Diffusion**. Unselect **Start Jupyter Notebook**.
 - SSH into your pod.
